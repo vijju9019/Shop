@@ -108,6 +108,7 @@ export const AuthProvider = ({ children }) => {
         _id: data._id,
         name: data.name,
         email: data.email,
+        phone: data.phone,
         role: data.role,
         discordUsername: data.discordUsername
       });
@@ -124,6 +125,47 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const sendOtp = async (phone) => {
+    try {
+      setLoading(true);
+      const { data } = await axios.post(`${API_URL}/auth/otp/send`, { phone });
+      return { success: true, data };
+    } catch (error) {
+      console.error('Send OTP error:', error);
+      return {
+        success: false,
+        message: error.response?.data?.message || 'Failed to send OTP. Please check the phone number.'
+      };
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const verifyOtp = async (phone, otp) => {
+    try {
+      setLoading(true);
+      const { data } = await axios.post(`${API_URL}/auth/otp/verify`, { phone, otp });
+      setToken(data.token);
+      setUser({
+        _id: data._id,
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        role: data.role,
+        discordUsername: data.discordUsername
+      });
+      return { success: true };
+    } catch (error) {
+      console.error('Verify OTP error:', error);
+      return {
+        success: false,
+        message: error.response?.data?.message || 'Invalid or expired OTP code.'
+      };
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -134,6 +176,8 @@ export const AuthProvider = ({ children }) => {
         register,
         logout,
         updateProfile,
+        sendOtp,
+        verifyOtp,
         isAdmin: user?.role === 'admin'
       }}
     >
