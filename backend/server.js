@@ -42,7 +42,7 @@ const seedData = async () => {
           name: 'Discord Nitro Basic',
           category: 'nitro',
           description: 'Get core Nitro features for a lower cost. Express yourself with custom emojis anywhere, bigger file sharing, and more!',
-          price: 149.00,
+          price: 100.00,
           duration: '1 Month',
           imageUrl: '/nitro-basic.png',
           features: [
@@ -57,7 +57,7 @@ const seedData = async () => {
           name: 'Discord Nitro',
           category: 'nitro',
           description: 'Unlock all the perks! Get custom emojis, HD video streaming, 2 Server Boosts, larger upload sizes, and deep profile customization options.',
-          price: 349.00,
+          price: 55.00,
           duration: '1 Month',
           imageUrl: '/nitro.png',
           features: [
@@ -71,14 +71,14 @@ const seedData = async () => {
           active: true
         },
         {
-          name: 'Server Boost (1 Month)',
+          name: 'Server Boost (2x Boost - 1 Month)',
           category: 'boost',
-          description: 'Supercharge your community server for 1 month! Elevate community perks like audio quality, invite configurations, and emoji counts.',
-          price: 199.00,
+          description: 'Supercharge your community server with a 2x boost for 1 month! Elevate community perks like audio quality, invite configurations, and emoji counts.',
+          price: 45.00,
           duration: '1 Month',
           imageUrl: '/boost.png',
           features: [
-            'Deliver to any server of your choosing',
+            'Deliver 2 Server Boosts instantly',
             'Boost active for a full 30 days',
             'Unlocks extra emojis, audio quality levels, and banners',
             'Instant activation and 24/7 delivery support'
@@ -89,7 +89,7 @@ const seedData = async () => {
           name: 'Server Boost (3 Months)',
           category: 'boost',
           description: 'Secure server perks for 3 months at a discount. Maintain Level 1/2 statuses for your community with zero interruption.',
-          price: 499.00,
+          price: 450.00,
           duration: '3 Months',
           imageUrl: '/boost.png',
           features: [
