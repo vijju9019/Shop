@@ -44,7 +44,7 @@ const seedData = async () => {
           description: 'Get core Nitro features for a lower cost. Express yourself with custom emojis anywhere, bigger file sharing, and more!',
           price: 149.00,
           duration: '1 Month',
-          imageUrl: 'https://images.unsplash.com/photo-1614680376593-902f74fa0d41?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3', // placeholder visual
+          imageUrl: '/nitro-basic.png',
           features: [
             'Use custom emojis and stickers anywhere',
             'Custom profile theme and status indicators',
@@ -59,7 +59,7 @@ const seedData = async () => {
           description: 'Unlock all the perks! Get custom emojis, HD video streaming, 2 Server Boosts, larger upload sizes, and deep profile customization options.',
           price: 349.00,
           duration: '1 Month',
-          imageUrl: 'https://images.unsplash.com/photo-1614680376739-414d95ff43df?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3', // placeholder visual
+          imageUrl: '/nitro.png',
           features: [
             'All Nitro Basic perks included',
             '2 Free Server Boosts + 30% off extra boosts',
@@ -76,7 +76,7 @@ const seedData = async () => {
           description: 'Supercharge your community server for 1 month! Elevate community perks like audio quality, invite configurations, and emoji counts.',
           price: 199.00,
           duration: '1 Month',
-          imageUrl: 'https://images.unsplash.com/photo-1590073844006-33379778ae09?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3', // placeholder visual
+          imageUrl: '/boost.png',
           features: [
             'Deliver to any server of your choosing',
             'Boost active for a full 30 days',
@@ -91,7 +91,7 @@ const seedData = async () => {
           description: 'Secure server perks for 3 months at a discount. Maintain Level 1/2 statuses for your community with zero interruption.',
           price: 499.00,
           duration: '3 Months',
-          imageUrl: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3', // placeholder visual
+          imageUrl: '/boost.png',
           features: [
             'Continuous server boosting for 90 days',
             'Save over 15% compared to monthly rates',
@@ -106,7 +106,7 @@ const seedData = async () => {
           description: 'The ultimate commitment. Protect and upgrade your server for an entire year. Highest priority processing and maximum savings.',
           price: 1799.00,
           duration: '12 Months',
-          imageUrl: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3', // placeholder visual
+          imageUrl: '/boost.png',
           features: [
             'Full year (365 days) boost protection',
             'Save 25% off monthly pricing',
