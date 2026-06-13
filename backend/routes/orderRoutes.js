@@ -6,6 +6,7 @@ import Product from '../models/Product.js';
 import User from '../models/User.js';
 import { protect, admin } from '../middleware/authMiddleware.js';
 import sendOrderConfirmationEmail from '../utils/email.js';
+import sendAdminNotification from '../utils/adminNotification.js';
 
 const router = express.Router();
 
@@ -137,6 +138,10 @@ router.post('/verify', protect, async (req, res) => {
       order.razorpaySignature = 'manual_submission';
       
       const updatedOrder = await order.save();
+
+      // Dispatch admin alert asynchronously
+      sendAdminNotification(updatedOrder).catch(console.error);
+
       return res.json({
         message: 'Payment details submitted for manual verification',
         order: updatedOrder,
@@ -173,8 +178,9 @@ router.post('/verify', protect, async (req, res) => {
 
       const updatedOrder = await order.save();
 
-      // Dispatch order confirmation email asynchronously
+      // Dispatch order confirmation email and admin alert asynchronously
       sendOrderConfirmationEmail(updatedOrder).catch(console.error);
+      sendAdminNotification(updatedOrder).catch(console.error);
 
       res.json({
         message: 'Payment verification successful',
